@@ -1,0 +1,31 @@
+# Build settings
+[build]
+base = "public"  # Le répertoire de base pour votre site web généré (modifiez selon vos besoins)
+publish = "public"  # Le répertoire à déployer (modifiez selon vos besoins)
+command = "npm run build"  # La commande pour construire votre site (modifiez selon vos besoins)
+
+# Redirects et réécriture des URL (facultatif)
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+
+# Optimisations et fonctionnalités (facultatif)
+[build.environment]
+NODE_ENV = "production"
+
+# Définir les versions Node.js (facultatif)
+[build.environment]
+NODE_VERSION = "14"
+
+# Headers personnalisés (facultatif)
+[[headers]]
+for = "/*"
+[headers.values]
+Cache-Control = "public, max-age=3600"
+
+# Rewrites personnalisés (facultatif)
+[[redirects]]
+from = "/old-url"
+to = "/new-url"
+status = 301
